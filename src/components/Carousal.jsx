@@ -11,11 +11,11 @@ function Carousal({ children: slides, autoSlide = true, autoDelay = 2000 }) {
   }, []);
   const prev = () => {
     setcurr((curr) => (curr === 0 ? slides.length - 1 : curr - 1));
-    console.log(curr);
+    // console.log(curr);
   };
   const next = () => {
     setcurr((curr) => (curr === slides.length - 1 ? 0 : curr + 1));
-    console.log(curr);
+    // console.log(curr);
   };
 
   return (
