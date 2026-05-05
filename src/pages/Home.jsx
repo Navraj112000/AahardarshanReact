@@ -137,16 +137,27 @@ const packageCards = [
 ];
 
 const AboutData = {
-image="",
-Heading="",
-Description="",
-yearExperience="",
-HappyClients="",
-ConditionTreated="",
-Call="",
-Whatsapp="",
-Instagram="",
-}
+  image:
+    "https://pplx-res.cloudinary.com/image/upload/pplx_search_images/d7fce39bb976d9fc3da20d528ff57823fe2a6960.jpg",
+  Heading: "Dr. Shivam Agarwal",
+  Description: `A dedicated health expert who specializes in organic nutrition, yoga
+therapy, and personalized lifestyle consultations. With a deep
+passion for holistic wellness, he has guided more than 1000+
+individuals toward achieving lasting weight loss, better health, and
+a balanced lifestyle.
+            
+Instead of quick fixes or short-term diets, Dr. Agarwal believes in
+creating sustainable changes that fit naturally into each person's
+daily life. His unique approach combines the healing power of
+organic, nutrient-rich foods with the benefits of mindful yoga
+practices.`,
+  yearExperience: "5+",
+  HappyClients: "10000",
+  ConditionTreated: "16",
+  Call: "",
+  Whatsapp: "",
+  Instagram: "",
+};
 
 function Home() {
   const [showAllPackages, setShowAllPackages] = useState(false);
@@ -191,9 +202,9 @@ function Home() {
         </div>
       </div>
       <div className="py-16 text-center">
-        <h2>How It Works</h2>
+        <h2 className="text-4xl font-bold">How It Works</h2>
         <p>Simple steps to transform your health</p>
-        <div className="cardSection py-16">
+        <div className="cardSection ">
           <CardSecond />
           <div className=" max-w-4xl m-auto rounded-4xl bg-yellow-300 px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-xs hover:bg-yellow-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
             Contact Us
@@ -235,8 +246,37 @@ function Home() {
           </div>
         </div>
       </div>
-///
-      <div className="AboutSectionpy16"></div>
+      {/* About Section */}
+      <div className="AboutSection py-16 gap-8 flex justify-center">
+        <div className="w-1/3">
+          {AboutData && <img src={AboutData.image} alt="Dr. Shivam Agarwal" />}
+        </div>
+        <div className="w-1/3">
+          <h2 className=" font-bold text-4xl py-4">{AboutData.Heading}</h2>
+          <pre>{AboutData.Description}</pre>
+          <div className="flex bg-amber-100 text-amber-700 gap-8 rounded-4xl m-4">
+            <div className="flex flex-col justify-center align-middle p-8 ">
+              <h3 className="text-center text-4xl font-bold">
+                {AboutData.yearExperience}
+              </h3>
+              <p>Years Of Experience</p>
+            </div>
+            <div className="flex flex-col justify-center align-middle p-8">
+              <h3 className="text-center text-4xl font-bold">
+                {AboutData.HappyClients}
+              </h3>
+              <p>No. of Clients</p>
+            </div>
+            <div className="flex flex-col justify-center align-middle p-8">
+              <h3 className="text-center text-4xl font-bold">
+                {AboutData.ConditionTreated}
+              </h3>
+              <p>Conditions Treated</p>
+            </div>
+          </div>
+          <h3>Reach Out To US</h3>
+        </div>
+      </div>
     </>
   );
 }
