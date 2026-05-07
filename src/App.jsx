@@ -1,21 +1,19 @@
 import { Route, Routes } from "react-router";
 
-import Header from './components/Header'
-import Home from './pages/Home'
-import Footer from './components/Footer'
+import Header from "./components/Header";
+import Home from "./pages/Home";
+import Footer from "./components/Footer";
 
 function App() {
-
   return (
     <>
-      <Header/>
+      <Header />
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
       </Routes>
-      <Footer/>
-      
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
